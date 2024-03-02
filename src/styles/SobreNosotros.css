@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&display=swap');
+
+.contenedor-sn {
+
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the image horizontally and vertically */
+    overflow: hidden; /* Ensure the image doesn't overflow */
+    height: 60vh; /* Set a fixed height for the container */
+    padding: 2rem;
+  }
+  
+  .sn-imagen {
+    width: 20rem;
+    height: auto;
+    margin-right: 1rem;
+    margin-left: 2rem;
+}
+  
+  
+  .sn-imagen img {
+    width: 100%; /* Make the image fill its container horizontally */
+  }
+  
+  .texto {
+    flex: 1; /* The text will take up the remaining space */
+    text-align: justify; /* Justify the text */
+    color: black; /* Text color */
+    font-family: "Outfit", sans-serif; /* Font type */
+    padding: 3rem;
+  }
+  
+  

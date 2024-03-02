@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import Inicio from './components/Inicio';
 import Titulo from './components/Titulo';
+import SobreNosotros from './components/SobreNosotros';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
         <Header />
         <Inicio />
         <Titulo texto="¿Quiénes somos?" />
+        <SobreNosotros />
     </div>
   );
 }
