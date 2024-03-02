@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&display=swap');
 
 /* Estilos generales */
 body{
@@ -15,7 +16,7 @@ body{
     padding: 1rem; /* Ajusta el relleno según tus necesidades */
     top: 0; /* Alinear en la parte superior */
     border-radius: 0 0 15px 15px; /* Redondear solo la parte inferior */
-    font-family: 'Roboto Slab', serif; /* Tipo de letra */
+    font-family: "Outfit", sans-serif;/* Tipo de letra */
     overflow-x: hidden;
   }
   
@@ -47,6 +48,7 @@ body{
   .menu ul li a {
     text-decoration: none; /* Remove underline from links */
     color: black;
+    font-size: 1.1rem;
   }
   
   .icons {

@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&display=swap');
 
 .contenedor-principal {
   display: flex;
-  height: 70vh;
-  width: 100vw;
+  height: 100vh;
+  width: 98.5vw;
   background-image: url('../assets/foto.jpg');
   background-size: cover;
-  font-family: 'Roboto Slab', serif; /* Tipo de letra */
+  font-family: "Outfit", sans-serif;/* Tipo de letra */
   position: relative;
 }
   
