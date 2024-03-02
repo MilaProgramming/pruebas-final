@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Camiseta de algodón",
+        "descripcion": "Camiseta de manga corta, cómoda y ligera",
+        "precio": 15.99,
+        "foto": "ruta/a/la/foto1.jpg"
+    },
+    {
+        "nombre": "Zapatos deportivos",
+        "descripcion": "Zapatos deportivos para correr con suela amortiguada",
+        "precio": 49.99,
+        "foto": "ruta/a/la/foto2.jpg"
+    },
+    {
+        "nombre": "Pantalones vaqueros",
+        "descripcion": "Pantalones vaqueros clásicos, perfectos para cualquier ocasión",
+        "precio": 29.99,
+        "foto": "ruta/a/la/foto3.jpg"
+    },
+    {
+        "nombre": "Reloj de pulsera",
+        "descripcion": "Reloj de pulsera analógico con correa de cuero",
+        "precio": 79.99,
+        "foto": "ruta/a/la/foto4.jpg"
+    },
+    {
+        "nombre": "Gafas de sol",
+        "descripcion": "Gafas de sol polarizadas con montura de metal",
+        "precio": 39.99,
+        "foto": "ruta/a/la/foto5.jpg"
+    }
+]

@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+.header {
+    background-color: #f5f5dc; /* Color blanco hueso */
+    height: 15%; /* Ajusta según tus necesidades */
+    width: 100%; /* Cubrir toda la parte superior */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0; /* Ajusta el relleno según tus necesidades */
+    position: fixed; /* Fijar en la parte superior */
+    top: 0; /* Alinear en la parte superior */
+    border-radius: 0 0 15px 15px; /* Redondear solo la parte inferior */
+    font-family: 'Roboto Slab', serif; /* Tipo de letra */
+  }
+  
+  .logo-container {
+    width: 20%; /* Ajusta según tus necesidades */
+    margin-left: 1rem;
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu ul li {
+    display: inline;
+    margin-right: 20px; /* Ajusta según tus necesidades */
+  }
+  
+  .menu ul li:last-child {
+    margin-right: 0;
+  }
+
+  .menu ul li a {
+    text-decoration: none; /* Remove underline from links */
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon{
+    margin-right: 1rem; /* Ajusta según tus necesidades */
+    cursor: pointer;
+    outline: none; /* Elimina cualquier borde al hacer clic */
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  
+
+  /* Estilos de hover */
+  .icon:hover {
+    color: pink;
+  }
