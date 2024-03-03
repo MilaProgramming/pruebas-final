@@ -1,0 +1,6 @@
+.catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Máximo 5 productos por fila */
+    grid-gap: 20px; /* Espacio entre los productos */
+  }
+  

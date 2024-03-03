@@ -2,11 +2,21 @@ import Header from './components/Header';
 import Inicio from './pages/Inicio';
 import Titulo from './components/Titulo';
 import SobreNosotros from './pages/SobreNosotros';
-import CartaProducto from './components/CartaProducto';
-import foto1 from './assets/products/product-image-1-thumb.jpg';
 import { Login } from './components/Login';
+import Catalogo from './pages/Catalogo';
+import productos from './data/productos';
+import {extraerFotos} from './functions/extraerFotos';
 
 function App() {
+ 
+  console.log(extraerFotos(productos)[0]);
+
+  //Funcion para hacerle require a cada foto de extraer fotos
+  const fotos = extraerFotos(productos).map(foto => {
+    return require(`${foto}`);
+  });
+
+
   return (
     <div>
         <Header />
@@ -14,7 +24,7 @@ function App() {
         <Titulo texto="¿Quiénes somos?" />
         <SobreNosotros />
         <Titulo texto="Catálogo" />
-        <CartaProducto nombre="Producto 1" descripcion="Descripción del producto 1" precio="100" foto={foto1} />
+          <Catalogo productos={productos.productos} fotos= {fotos} />
         <Login />
     </div>
   );

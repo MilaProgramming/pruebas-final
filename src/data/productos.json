@@ -4,31 +4,31 @@
         "nombre": "Brocha Redonda",
         "descripcion": "Brocha suave y densa para aplicar polvos y bases de maquillaje.",
         "precio": 12.99,
-        "foto": "ruta/a/la/foto1.jpg"
+        "foto": "./assets/products/product-image-1-thumb.jpg"
       },
       {
         "nombre": "Rímel",
         "descripcion": "Máscara de pestañas para alargar y dar volumen a tus pestañas.",
         "precio": 9.99,
-        "foto": "ruta/a/la/foto2.jpg"
+        "foto": "./assets/products/product-image-1.jpg"
       },
       {
         "nombre": "Labial",
         "descripcion": "Barra de labios hidratante con una amplia gama de colores intensos.",
         "precio": 7.99,
-        "foto": "ruta/a/la/foto3.jpg"
+        "foto": "./assets/products/product-image-2.jpg"
       },
       {
         "nombre": "Set de Maquillaje",
         "descripcion": "Completo set de maquillaje que incluye sombras, rubores y labiales.",
         "precio": 29.99,
-        "foto": "ruta/a/la/foto4.jpg"
+        "foto": "./assets/products/product-image-3.jpg"
       },
       {
         "nombre": "Rubor",
         "descripcion": "Rubor en polvo para dar un toque de color natural a tus mejillas.",
         "precio": 6.99,
-        "foto": "ruta/a/la/foto5.jpg"
+        "foto": "./assets/products/product-image-4.jpg"
       }
     ]
   }
