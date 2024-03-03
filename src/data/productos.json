@@ -10,13 +10,13 @@
         "nombre": "Rímel",
         "descripcion": "Máscara de pestañas para alargar y dar volumen a tus pestañas.",
         "precio": 9.99,
-        "foto": "./assets/products/product-image-1.jpg"
+        "foto": "/assets/products/product-image-1.jpg"
       },
       {
         "nombre": "Labial",
         "descripcion": "Barra de labios hidratante con una amplia gama de colores intensos.",
         "precio": 7.99,
-        "foto": "./assets/products/product-image-2.jpg"
+        "foto": "../assets/products/product-image-2.jpg"
       },
       {
         "nombre": "Set de Maquillaje",

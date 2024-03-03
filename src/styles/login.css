@@ -1,5 +1,5 @@
 .login {
-    background-image: url('../assets/foto.jpg');
+    background-image: url('../../public/assets/foto.jpg');
     background-position: center;
     padding:16%  20%;
 }
