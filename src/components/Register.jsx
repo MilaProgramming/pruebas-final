@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import ValidacionUsuario from "../class/usuario";
 import { useForm } from "../hook/useForm";
-import "../styles/login.css"
 
-export const Login = () => {
+export const Register = () => {
   const [error, setError] = useState("");
 
   const {usuario, contrasena, onInputChange} =
@@ -33,7 +32,7 @@ export const Login = () => {
     <>
       <section className="login">
         <div className="titulo" style={{ cursor: "default" }}>
-          Iniciar sesion
+          Registrarse
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="GET-usuario" style={{ marginRight: "80px" }}>
@@ -65,7 +64,7 @@ export const Login = () => {
           <button type="submit">Aceptar</button>
           {error && <p className="error" style={{color: "red"}}>{error}</p>}
         </form>
-        <p>No tienes cuenta? <a href="/register">Registrate</a></p>
+        <p>Tienes cuenta? <a href="/login">Inicia sesion</a></p>
       </section>
     </>
   );

@@ -1,19 +1,8 @@
-import Header from './components/Header';
-import Inicio from './components/Inicio';
-import Titulo from './components/Titulo';
-import SobreNosotros from './components/SobreNosotros';
-import { Login } from './components/Login';
+import "./styles/App.css"
+import { AppRouter } from './router/routes';
 
 function App() {
-  return (
-    <div>
-        <Header />
-        <Inicio />
-        <Titulo texto="¿Quiénes somos?" />
-        <SobreNosotros />
-        <Login />
-    </div>
-  );
+  return <AppRouter />;;
 }
 
 export default App;
