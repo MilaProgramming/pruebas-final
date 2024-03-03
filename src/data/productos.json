@@ -1,32 +1,35 @@
-[
-    {
-        "nombre": "Camiseta de algodón",
-        "descripcion": "Camiseta de manga corta, cómoda y ligera",
-        "precio": 15.99,
+{
+    "productos": [
+      {
+        "nombre": "Brocha Redonda",
+        "descripcion": "Brocha suave y densa para aplicar polvos y bases de maquillaje.",
+        "precio": 12.99,
         "foto": "ruta/a/la/foto1.jpg"
-    },
-    {
-        "nombre": "Zapatos deportivos",
-        "descripcion": "Zapatos deportivos para correr con suela amortiguada",
-        "precio": 49.99,
+      },
+      {
+        "nombre": "Rímel",
+        "descripcion": "Máscara de pestañas para alargar y dar volumen a tus pestañas.",
+        "precio": 9.99,
         "foto": "ruta/a/la/foto2.jpg"
-    },
-    {
-        "nombre": "Pantalones vaqueros",
-        "descripcion": "Pantalones vaqueros clásicos, perfectos para cualquier ocasión",
-        "precio": 29.99,
+      },
+      {
+        "nombre": "Labial",
+        "descripcion": "Barra de labios hidratante con una amplia gama de colores intensos.",
+        "precio": 7.99,
         "foto": "ruta/a/la/foto3.jpg"
-    },
-    {
-        "nombre": "Reloj de pulsera",
-        "descripcion": "Reloj de pulsera analógico con correa de cuero",
-        "precio": 79.99,
+      },
+      {
+        "nombre": "Set de Maquillaje",
+        "descripcion": "Completo set de maquillaje que incluye sombras, rubores y labiales.",
+        "precio": 29.99,
         "foto": "ruta/a/la/foto4.jpg"
-    },
-    {
-        "nombre": "Gafas de sol",
-        "descripcion": "Gafas de sol polarizadas con montura de metal",
-        "precio": 39.99,
+      },
+      {
+        "nombre": "Rubor",
+        "descripcion": "Rubor en polvo para dar un toque de color natural a tus mejillas.",
+        "precio": 6.99,
         "foto": "ruta/a/la/foto5.jpg"
-    }
-]
+      }
+    ]
+  }
+  
