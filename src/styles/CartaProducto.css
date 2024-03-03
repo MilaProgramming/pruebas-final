@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&display=swap');
+
+.carta-producto {
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #FD8EA1;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 10px;
+    background-color: #FFF5F7;
+    align-items: center;
+    justify-content: center;
+    max-width: fit-content;
+}
+  
+  .foto-producto {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .info-producto {
+    text-align: center;
+  }
+  
+  .agregar-carrito {
+    background-color: #FD8EA1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .agregar-carrito:hover {
+    background-color: #FF6B8B;
+  }
+  
