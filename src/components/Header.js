@@ -11,9 +11,9 @@ const Header = () => {
       </div>
       <div className="menu">
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Sobre nosotros</a></li>
-          <li><a href="#">Comprar</a></li>
+          <li><a href="*">Inicio</a></li>
+          <li><a href="*">Sobre nosotros</a></li>
+          <li><a href="*">Comprar</a></li>
         </ul>
       </div>
       <div className="icons">
