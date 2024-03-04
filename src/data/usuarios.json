@@ -18,5 +18,9 @@
     {
         "usuario": "usuario5",
         "contrasena": "contrasena5"
+    },
+    {
+        "usuario": "dylan",
+        "contrasena": "prueba"
     }
 ]

@@ -1,31 +1,21 @@
 import React, { useState } from "react";
-import ValidacionUsuario from "../class/usuario";
 import { useForm } from "../hook/useForm";
 
 export const Register = () => {
-  const [error, setError] = useState("");
+  const [usuarios, setUsuarios] = useState([]);
 
-  const {usuario, contrasena, onInputChange} =
+  const { usuario, contrasena, onInputChange} =
     useForm({
-      usuario: '',
-      contrasena: '',
+      usuario: "",
+      contrasena: "",
     });
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const validador = new ValidacionUsuario();
-    validador.setUsuario(usuario);
-    validador.setContrasena(contrasena);
-    validador.validacionUsuario();
-    const usuarioValido = validador.getValido();
-
-    if (!usuarioValido) {
-      setError("*Usuario o Contraseña inválida.");
-      return;
-    }
-
-    alert("Si se logeo jeje")
+    // Agregar el nuevo usuario y contraseña al estado
+    setUsuarios([...usuarios, { usuario, contrasena }]);
+    alert("Usuario registrado correctamente.");
   };
 
   return (
@@ -39,7 +29,7 @@ export const Register = () => {
             Usuario
           </label>
           <input
-            id="GET-cedula"
+            id="GET-usuario"
             type="text"
             name="usuario"
             placeholder="Usuario"
@@ -55,16 +45,15 @@ export const Register = () => {
             id="GET-contrasena"
             type="password"
             name="contrasena"
-            placeholder="contrasena"
+            placeholder="Contraseña"
             value={contrasena}
             onChange={onInputChange}
             required
           />
           <br />
           <button type="submit">Aceptar</button>
-          {error && <p className="error" style={{color: "red"}}>{error}</p>}
         </form>
-        <p>Tienes cuenta? <a href="/login">Inicia sesion</a></p>
+        <p>Tienes cuenta? <a href="/login">Inicia sesión</a></p>
       </section>
     </>
   );

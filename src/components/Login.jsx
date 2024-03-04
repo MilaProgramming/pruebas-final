@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ValidacionUsuario from "../class/usuario";
 import { useForm } from "../hook/useForm";
 import "../styles/login.css"
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
 
   const {usuario, contrasena, onInputChange} =
     useForm({
       usuario: '',
       contrasena: '',
     });
+
+    useEffect(()=>{
+      
+      if(isLoggedIn) {
+        navigate("/")
+      }
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -26,7 +37,11 @@ export const Login = () => {
       return;
     }
 
-    alert("Si se logeo jeje")
+    localStorage.setItem("isLoggedIn", "true");
+    localStorage.setItem("username", usuario);
+    alert("Si se logeo jeje");
+    navigate("/")
+    window.location.reload();
   };
 
   return (

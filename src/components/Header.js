@@ -5,6 +5,16 @@ import logo from "../assets/logo.png";
 import { Link, Outlet } from "react-router-dom";
 
 const Header = () => {
+
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const username = localStorage.getItem("username");
+
+  const handleCerrar = () => {
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("username");
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="header">
@@ -28,11 +38,22 @@ const Header = () => {
           <button className="icon" title="Carrito">
             <FaShoppingCart className="icon" />
           </button>
-          <Link to={"/login"}>
-            <button className="icon" title="Iniciar sesión">
-              <FaUser className="icon" />
-            </button>
-          </Link>
+          {!isLoggedIn ? (
+            <Link to="/login">
+              <button className="icon" title="Iniciar sesión" style={{display: "flex", alignItems: "center"}}>
+                <FaUser className="icon" />
+                <p>Iniciar sesion</p>
+              </button>
+            </Link>
+          ) : (
+            <>
+            <button className="icon" title="Cerrar sesion" style={{display: "flex", alignItems: "center"}} onClick={handleCerrar}>
+                <FaUser className="icon" />
+                <p>{username}</p>
+              </button>
+              
+            </>
+          )}
         </div>
       </div>
       <Outlet />
