@@ -1,9 +1,67 @@
-.login {
-    background-image: url('../../public/assets/foto.jpg');
-    background-position: center;
-    padding:16%  20%;
+.login-contenedor {
+    display: flex;
+    height: 100vh;
+    width: 98vw;
+    background-image: url('../../public/assets/foto1.jpg');
+    background-size: cover;
+    font-family: "Outfit", sans-serif;/* Tipo de letra */
+    position: relative;
 }
 
-.login .titulo {
-
+.login{
+    position: absolute;
+    top: 5%;
+    left: 10%;
+    width: 20rem;
+    margin: 0 auto; /* Centra el formulario horizontalmente */
+    padding: 1.5rem; /* Agrega espacio alrededor del formulario */
+    border: 2px solid black; /* Borde negro */
+    border-radius: 10px; /* Bordes redondeados */
 }
+
+.titulo{
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+  .login form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login label {
+    margin-bottom: 0.5rem; /* Espacio entre las etiquetas y los inputs */
+  }
+  
+  .login input[type="text"],
+  .login input[type="password"] {
+    padding: 0.5rem; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-bottom: 1rem; /* Espacio entre los inputs */
+  }
+  
+  .login input[type="text"]::placeholder,
+  .login input[type="password"]::placeholder {
+    color: #999; /* Color del placeholder */
+  }
+  
+  .login button {
+    padding: 0.5rem 1rem; /* Espaciado interno del botón */
+    border: none;
+    background-color: #FD8EA1; /* Color de fondo */
+    color: white; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .login button:hover {
+    background-color: #FF6B8B; /* Cambia de color al pasar el ratón */
+  }
+  
+  .error {
+    color: red;
+    margin-top: 1rem; /* Espacio arriba del mensaje de error */
+  }
+  

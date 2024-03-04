@@ -1,5 +1,5 @@
 import React from "react";
-import { FaShoppingCart, FaUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 import "../styles/Header.css"; // Archivo CSS para estilos personalizados
 import logo from "../assets/logo.png";
 import { Link, Outlet } from "react-router-dom";
@@ -35,9 +35,6 @@ const Header = () => {
           </ul>
         </div>
         <div className="icons">
-          <button className="icon" title="Carrito">
-            <FaShoppingCart className="icon" />
-          </button>
           {!isLoggedIn ? (
             <Link to="/login">
               <button className="icon" title="Iniciar sesión" style={{display: "flex", alignItems: "center"}}>

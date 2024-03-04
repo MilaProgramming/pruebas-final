@@ -1,7 +1,25 @@
 .catalogo {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Máximo 5 productos por fila */
-    grid-gap: 20px; /* Espacio entre los productos */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px; 
     padding: 1rem;
+  }
+  
+  .busqueda {
+    margin: 1rem;
+    padding: 0.5rem 1rem; 
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+    outline: none; 
+    font-size: 1rem; 
+    width: 300px; 
+    background-image: url('https://cdn-icons-png.flaticon.com/512/49/49116.png'); 
+    background-position: calc(100% - 10px) center;
+    background-repeat: no-repeat;
+    background-size: 20px; 
+  }
+  
+  .busqueda:focus {
+    border-color: #FD8EA1; 
   }
   

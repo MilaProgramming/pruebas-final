@@ -46,7 +46,8 @@ export const Login = () => {
 
   return (
     <>
-      <section className="login">
+      <section className="login-contenedor">
+        <div className="login">
         <div className="titulo" style={{ cursor: "default" }}>
           Iniciar sesion
         </div>
@@ -80,7 +81,7 @@ export const Login = () => {
           <button type="submit">Aceptar</button>
           {error && <p className="error" style={{color: "red"}}>{error}</p>}
         </form>
-        <p>No tienes cuenta? <a href="/register">Registrate</a></p>
+        </div>
       </section>
     </>
   );

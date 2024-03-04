@@ -10,9 +10,6 @@ const CartaProducto = ({ nombre, descripcion, precio, foto }) => {
         <h2>{nombre}</h2>
         <p>{descripcion}</p>
         <p>Precio: ${precio}</p>
-        <button className="agregar-carrito">
-          Agregar al carrito <i className="fas fa-shopping-cart"></i>
-        </button>
       </div>
     </div>
   );
