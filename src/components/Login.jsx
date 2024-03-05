@@ -40,7 +40,7 @@ export const Login = () => {
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("username", usuario);
     localStorage.setItem("rol", rol);
-    alert("Si se logeo jeje");
+    alert("Login exitoso");
     navigate("/");
     window.location.reload();
   };
@@ -79,7 +79,7 @@ export const Login = () => {
               required
             />
             <br />
-            <button type="submit">Aceptar</button>
+            <button type="submit" name='boton'>Aceptar</button>
             {error && (
               <p className="error" style={{ color: "red" }}>
                 {error}

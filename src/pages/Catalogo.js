@@ -24,6 +24,7 @@ const Catalogo = () => {
         className="busqueda"
         value={busqueda}
         onChange={handleBusquedaChange}
+        name='busqueda'
       />
       <div className="catalogo">
       {productosFiltrados.length === 0 ? (
