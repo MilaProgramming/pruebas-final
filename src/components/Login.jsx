@@ -53,7 +53,7 @@ export const Login = () => {
             Iniciar sesion
           </div>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="GET-usuario" style={{ marginRight: "80px" }}>
+            <label htmlFor="GET-usuario" id="usuario" style={{ marginRight: "80px" }}>
               Usuario
             </label>
             <input
@@ -66,7 +66,7 @@ export const Login = () => {
               required
             />
             <br />
-            <label htmlFor="GET-contrasena" style={{ marginRight: "48px" }}>
+            <label htmlFor="GET-contrasena" id="contrasena" style={{ marginRight: "48px" }}>
               Contraseña
             </label>
             <input
