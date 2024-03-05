@@ -1,51 +1,74 @@
 import { defineFeature, loadFeature } from "jest-cucumber";
+import axios from "axios";
+
+
 const feature = loadFeature("./Tests/caseValidate/validate.feature");
 
 defineFeature(feature, (test) => {
+  interface Usuario {
+    usuario: string;
+    contrasena: string;
+    rol: string;
+  }
 
-    // Feature: Validación de Registro
-    // Scenario: El Sistema permite Registrarse
-    //     Given El cliente accede al sistema
-    //     When Presiona el botón registrarse
-    //     And Ingresa el nombre de usuario y la contraseña 
-    //     And Presiona el botón "Aceptar"
-    //     Then El sistema permite el registro del usuario
+  let usuariosEnBD: Usuario[] = [];
+  let clienteAccedio = false;
+  let botonRegistrarsePresionado = false;
+  let nombreUsuario = "";
+  let contrasena = "";
+  let botonAceptarPresionado = false;
 
-    test('El Sistema permite Registrarse', ({ given, when, and, then }) => {
-        let clienteAccedio = false;
-        let botonRegistrarsePresionado = false;
-        let nombreUsuario = "";
-        let contrasena = "";
-        let botonAceptarPresionado = false;
+  test("El Sistema permite Registrarse", ({ given, when, and, then }) => {
+    given("El cliente accede al sistema", async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/usuarios");
 
-        given('El cliente accede al sistema', () => {
-            // Simular el acceso del cliente al sistema
-            clienteAccedio = true;
-        });
-
-        when('Presiona el botón registrarse', () => {
-            // Simular el evento de presionar el botón de registro
-            botonRegistrarsePresionado = true;
-        });
-
-        and('Ingresa el nombre de usuario y la contraseña', () => {
-            // Simular la entrada de datos por parte del cliente para el registro
-            nombreUsuario = "usuario1";
-            contrasena = "contrasena1";
-        });
-
-        and('Presiona el botón "Aceptar"', () => {
-            // Simular el evento de presionar el botón de aceptar para el registro
-            botonAceptarPresionado = true;
-        });
-
-        then('El sistema permite el registro del usuario', () => {
-            // Agrega la lógica para verificar que el sistema permite el registro del usuario
-            expect(clienteAccedio).toBe(true);
-            expect(botonRegistrarsePresionado).toBe(true);
-            expect(nombreUsuario).toEqual("usuario1");
-            expect(contrasena).toEqual("contrasena1");
-            expect(botonAceptarPresionado).toBe(true);
-        });
+        if (response && response.data) {
+          usuariosEnBD = response.data;
+          clienteAccedio = true;
+        } else {
+          console.error("La respuesta del servidor no tiene el formato esperado.");
+        }
+      } catch (error) {
+        console.error("Error al obtener datos del servidor:", error);
+      }
     });
+
+    when("Presiona el botón registrarse", () => {
+      botonRegistrarsePresionado = true;
+    });
+
+    and("Ingresa el nombre de usuario y la contraseña", () => {
+      nombreUsuario = "usuarioPrueba";
+      contrasena = "contrasena2";
+    });
+
+    and(/^Presiona el botón "(.*)"$/, (boton) => {
+      botonAceptarPresionado = true;
+    });
+
+    then("El sistema permite el registro del usuario", async () => {
+      // Espera hasta que se cumplan todas las promesas pendientes
+      await Promise.resolve();
+
+      expect(clienteAccedio).toBe(true);
+      expect(botonRegistrarsePresionado).toBe(true);
+      expect(botonAceptarPresionado).toBe(true);
+
+      const axiosPostSpy = jest.spyOn(axios, 'post');
+
+      const usuarioExistente = usuariosEnBD.some((usuario) => usuario.usuario === nombreUsuario);
+
+      if (!usuarioExistente) {
+        await axios.post("http://localhost:8000/usuarios", {
+          usuario: nombreUsuario,
+          contrasena: contrasena,
+          rol: "cliente",
+        });
+      }
+
+      expect(axiosPostSpy).toHaveBeenCalled();
+      axiosPostSpy.mockRestore();
+    });
+  });
 });
