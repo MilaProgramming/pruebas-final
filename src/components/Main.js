@@ -6,10 +6,10 @@ import Catalogo from "../pages/Catalogo";
 export const Main = () => {
   return (
     <div>
-      <Inicio />
-      <Titulo texto="¿Quiénes somos?" />
+      <Inicio id="inicio"/>
+      <Titulo texto="¿Quiénes somos?" id="sobre-nosotros"/>
       <SobreNosotros />
-      <Titulo texto="Catálogo" />
+      <Titulo texto="Catálogo" id="catalogo"/>
       <Catalogo />
     </div>
   );
