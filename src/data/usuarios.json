@@ -10,11 +10,6 @@
     "rol": "cliente"
   },
   {
-    "usuario": "usuario3",
-    "contrasena": "contrasena3",
-    "rol": "cliente"
-  },
-  {
     "usuario": "dylan",
     "contrasena": "prueba",
     "rol": "administrador"

@@ -9,7 +9,6 @@ const Header = () => {
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const username = localStorage.getItem("username");
   const rol = localStorage.getItem("rol");
-  console.log(rol)
   const handleCerrar = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
