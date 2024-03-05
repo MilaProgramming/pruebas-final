@@ -27,7 +27,7 @@ defineFeature(feature, (test) => {
         then('El sistema valida que la contraseña cumpla los requisitos', () => {
             // Lógica simulada de validación de contraseña
             // Aquí puedes agregar la lógica real para verificar que la contraseña cumple con los requisitos
-            const contraseñaIngresada = "contraseña123";
+            const contraseñaIngresada = "Contraseña123";
             // Ejemplo de lógica de validación: al menos 8 caracteres y al menos una letra mayúscula
             validacionContraseñaExitosa = contraseñaIngresada.length >= 8 && /[A-Z]/.test(contraseñaIngresada);
             
