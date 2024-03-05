@@ -1,4 +1,4 @@
-function validacionClave(inputString) {
+const validacionClave = (inputString) => {
 
     if (inputString.length < 8) {
       return false;
@@ -9,6 +9,5 @@ function validacionClave(inputString) {
   
     return contieneMayuscula && contieneMinuscula;
   }
-
-module.exports = validacionClave;
   
+module.exports = validacionClave;

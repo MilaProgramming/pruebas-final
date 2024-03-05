@@ -9,8 +9,8 @@ export const Main = () => {
       <Inicio id="inicio"/>
       <Titulo texto="¿Quiénes somos?" id="sobre-nosotros"/>
       <SobreNosotros />
-      <Titulo texto="Catálogo" id="catalogo"/>
-      <Catalogo />
+      <Titulo texto="Catálogo"/>
+      <Catalogo name="catalogo"/>
     </div>
   );
 };

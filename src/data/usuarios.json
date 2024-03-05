@@ -38,5 +38,10 @@
     "usuario": "mila",
     "contrasena": "ABC123abc",
     "rol": "cliente"
+  },
+  {
+    "usuario": "test",
+    "contrasena": "ABC123abc",
+    "rol": "cliente"
   }
 ]
