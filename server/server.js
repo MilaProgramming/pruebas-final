@@ -1,19 +1,18 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-const cors = require('cors'); // Importa el paquete cors
+const cors = require('cors'); 
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors()); // Usa el middleware cors para permitir solicitudes desde cualquier origen
+app.use(cors());
 
 const path = require('path');
 
-// Ruta absoluta al archivo JSON de usuarios
+
 const usuariosFilePath = path.resolve(__dirname, '..', 'src', 'data', 'usuarios.json');
 
-// Ruta para obtener los usuarios
 app.get('/usuarios', (req, res) => {
   fs.readFile(usuariosFilePath, 'utf8', (err, data) => {
     if (err) {
@@ -32,7 +31,6 @@ app.get('/usuarios', (req, res) => {
   });
 });
 
-// Ruta para registrar un nuevo usuario
 app.post('/usuarios', (req, res) => {
   const nuevoUsuario = req.body;
 
@@ -63,7 +61,6 @@ app.post('/usuarios', (req, res) => {
   });
 });
 
-// Ruta para eliminar un usuario por su nombre de usuario
 app.delete('/usuarios/:usuario', (req, res) => {
   const usuarioAEliminar = req.params.usuario;
 
@@ -76,7 +73,6 @@ app.delete('/usuarios/:usuario', (req, res) => {
 
     try {
       let usuarios = JSON.parse(data);
-      // Filtrar los usuarios y eliminar el usuario con el nombre de usuario proporcionado
       usuarios = usuarios.filter(usuario => usuario.usuario !== usuarioAEliminar);
 
       fs.writeFile(usuariosFilePath, JSON.stringify(usuarios, null, 2), (err) => {

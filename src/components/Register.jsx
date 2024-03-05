@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "../hook/useForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { validacionClave } from "../functions/validacionClave";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -24,7 +23,7 @@ export const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    let validacionClave = require('../functions/validacionClave');
     // Validar la contraseña
     if (!validacionClave(contrasena)) {
       setContrasenaValida(false);
@@ -81,7 +80,7 @@ export const Register = () => {
             />
             {!contrasenaValida && <p style={{ color: 'red' }}>La contraseña debe tener al menos 8 caracteres y contener una letra mayúscula y una minúscula.</p>}
             <br />
-            <button type="submit">Aceptar</button>
+            <button type="submit" name ='boton'>Aceptar</button>
           </form>
           <p>
             ¿Tienes una cuenta? <a href="/login">Inicia sesión</a>

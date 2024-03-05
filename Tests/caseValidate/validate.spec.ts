@@ -69,6 +69,6 @@ defineFeature(feature, (test) => {
 
       expect(axiosPostSpy).toHaveBeenCalled();
       axiosPostSpy.mockRestore();
-    });
-  });
+    });
+  });
 });
