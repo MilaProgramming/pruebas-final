@@ -15,8 +15,8 @@
     "rol": "cliente"
   },
   {
-    "usuario": "dylan",
-    "contrasena": "prueba",
+    "usuario": "admin",
+    "contrasena": "admin123",
     "rol": "administrador"
   },
   {

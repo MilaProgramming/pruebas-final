@@ -1,5 +1,9 @@
-Feature: Cedula valida
-    Scenario: validacion de cedula
-        Given un string que contiene la cedula de un cliente
-        When verifico la cedula creando el objeto verificador
-        Then la cedula es valida
+Feature: Registro de Usuario
+
+  Scenario: Registro de Usuario Exitoso
+       Given que el cliente accede al sistema
+       When completa el campo de usuario con "admin" 
+       And completa el campo de contraseña con "admin" 
+       And presiona el botón "Registrar"
+       Then el sistema responde de manera correcta 
+
