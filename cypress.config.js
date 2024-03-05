@@ -1,16 +1,8 @@
-module.exports = {
-  viewportWidth: 1280,
-  viewportHeight: 720,
-  defaultCommandTimeout: 5000,
+const { defineConfig } = require('cypress')
 
+module.exports = defineConfig({
   e2e: {
-    baseUrl: 'http://localhost:3000', // URL para tus pruebas de extremo a extremo
+    baseUrl: 'http://localhost:3000',
+    supportFile: "false"
   },
-
-  component: {
-    devServer: {
-      framework: "create-react-app",
-      bundler: "webpack",
-    },
-  },
-};
+})
