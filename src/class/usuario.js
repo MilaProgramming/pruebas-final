@@ -40,6 +40,14 @@ class ValidacionUsuario {
           return;
         }
     }
+
+    asignarRol(){
+      const usuarioEncontrado = this.usuarios.find(user => user.usuario === this.usuario && user.contrasena === this.contrasena);
+      if (usuarioEncontrado) return usuarioEncontrado.rol;
+
+      return null;
+    }
+
   }
   
   module.exports = ValidacionUsuario;

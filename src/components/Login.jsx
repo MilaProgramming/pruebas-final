@@ -11,7 +11,7 @@ export const Login = () => {
 
   const { usuario, contrasena, onInputChange } = useForm({
     usuario: "",
-    contrasena: "",
+    contrasena: ""
   });
 
   useEffect(() => {
@@ -28,6 +28,7 @@ export const Login = () => {
     validador.setUsuario(usuario);
     validador.setContrasena(contrasena);
     validador.validacionUsuario();
+    
     const usuarioValido = validador.getValido();
 
     if (!usuarioValido) {
@@ -35,8 +36,10 @@ export const Login = () => {
       return;
     }
 
+    let rol = validador.asignarRol();
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("username", usuario);
+    localStorage.setItem("rol", rol);
     alert("Si se logeo jeje");
     navigate("/");
     window.location.reload();

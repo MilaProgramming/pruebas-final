@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "../hook/useForm";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
   const { usuario, contrasena, rol, onInputChange } = useForm({
     usuario: "",
     contrasena: "",
-    rol: "cliente"
+    rol: "cliente",
   });
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,11 +27,16 @@ export const Register = () => {
       await axios.post("http://localhost:8000/usuarios", {
         usuario,
         contrasena,
-        rol
+        rol,
       });
 
       // Actualizar el estado local o realizar cualquier acción adicional si es necesario
       alert("Usuario registrado correctamente.");
+      localStorage.setItem("isLoggedIn", "true");
+      localStorage.setItem("username", usuario);
+      localStorage.setItem("rol", rol);
+      navigate("/");
+      window.location.reload();
     } catch (error) {
       console.error("Error al registrar usuario:", error);
       alert("Error al registrar usuario. Por favor, inténtalo de nuevo.");
@@ -36,9 +51,7 @@ export const Register = () => {
             Registrarse
           </div>
           <form onSubmit={handleSubmit}>
-            <label style={{ marginRight: "80px" }}>
-              Usuario
-            </label>
+            <label style={{ marginRight: "80px" }}>Usuario</label>
             <input
               type="text"
               name="usuario"
@@ -48,9 +61,7 @@ export const Register = () => {
               required
             />
             <br />
-            <label style={{ marginRight: "48px" }}>
-              Contraseña
-            </label>
+            <label style={{ marginRight: "48px" }}>Contraseña</label>
             <input
               type="password"
               name="contrasena"

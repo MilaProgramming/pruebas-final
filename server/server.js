@@ -63,6 +63,40 @@ app.post('/usuarios', (req, res) => {
   });
 });
 
+// Ruta para eliminar un usuario por su nombre de usuario
+app.delete('/usuarios/:usuario', (req, res) => {
+  const usuarioAEliminar = req.params.usuario;
+
+  fs.readFile(usuariosFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).json({ error: 'Error al leer el archivo de usuarios.' });
+      return;
+    }
+
+    try {
+      let usuarios = JSON.parse(data);
+      // Filtrar los usuarios y eliminar el usuario con el nombre de usuario proporcionado
+      usuarios = usuarios.filter(usuario => usuario.usuario !== usuarioAEliminar);
+
+      fs.writeFile(usuariosFilePath, JSON.stringify(usuarios, null, 2), (err) => {
+        if (err) {
+          console.error(err);
+          res.status(500).json({ error: 'Error al escribir en el archivo de usuarios.' });
+          return;
+        }
+
+        res.json({ message: 'Usuario eliminado correctamente.' });
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error al analizar los datos de usuarios.' });
+    }
+  });
+});
+
+
+
 app.listen(8000, () => {
   console.log('Servidor escuchando en el puerto 8000');
 });

@@ -6,7 +6,7 @@ import Producto from '../class/producto';
 const Catalogo = () => {
   
   const [busqueda, setBusqueda] = useState('');
-  const productos = new Producto ().productos.productos; // Ajusta esto según cómo importes tu JSON de productos
+  const productos = new Producto ().productos.productos;
 
   const productosFiltrados = productos.filter(producto =>
     producto.nombre.toLowerCase().includes(busqueda.toLowerCase())
@@ -31,6 +31,7 @@ const Catalogo = () => {
         ) : (
           productosFiltrados.map((producto, index) => (
             <CartaProducto
+              modo={"catalogo"}
               key={index}
               nombre={producto.nombre}
               descripcion={producto.descripcion}

@@ -8,10 +8,12 @@ const Header = () => {
 
   const isLoggedIn = localStorage.getItem("isLoggedIn");
   const username = localStorage.getItem("username");
-
+  const rol = localStorage.getItem("rol");
+  console.log(rol)
   const handleCerrar = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("username");
+    localStorage.removeItem("rol");
     window.location.reload();
   };
 
@@ -32,6 +34,9 @@ const Header = () => {
             <li>
               <a href="/">Comprar</a>
             </li>
+            {rol === "administrador" ? (<li>
+              <Link to="/lista-clientes">Lista de clientes</Link>
+            </li>) : (null)}
           </ul>
         </div>
         <div className="icons">

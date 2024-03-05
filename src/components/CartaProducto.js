@@ -1,18 +1,19 @@
-import React from 'react';
-import '../styles/CartaProducto.css'; // Estilos CSS para este componente
+import React from "react";
+import "../styles/CartaProducto.css";
 
-const CartaProducto = ({ nombre, descripcion, precio, foto }) => {
-
+const CartaProducto = ({ modo, nombre, descripcion, precio, foto }) => {
   return (
     <div className="carta-producto">
-      <img src={foto} alt={nombre} className="foto-producto" />
+      {modo === "catalogo" ? (
+        <img src={foto} alt={nombre} className="foto-producto" />
+      ) : null}
       <div className="info-producto">
         <h2>{nombre}</h2>
         <p>{descripcion}</p>
-        <p>Precio: ${precio}</p>
+        {modo === "catalogo" ? <p>Precio: ${precio}</p> : null}
       </div>
     </div>
   );
-}
+};
 
 export default CartaProducto;
