@@ -43,5 +43,10 @@
     "usuario": "usuarioPrueba",
     "contrasena": "contrasena2",
     "rol": "cliente"
+  },
+  {
+    "usuario": "fenandito",
+    "contrasena": "fenandito123",
+    "rol": "cliente"
   }
 ]
