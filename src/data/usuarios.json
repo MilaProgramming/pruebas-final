@@ -1,26 +1,42 @@
 [
-    {
-        "usuario": "usuario1",
-        "contrasena": "contrasena1"
-    },
-    {
-        "usuario": "usuario2",
-        "contrasena": "contrasena2"
-    },
-    {
-        "usuario": "usuario3",
-        "contrasena": "contrasena3"
-    },
-    {
-        "usuario": "usuario4",
-        "contrasena": "contrasena4"
-    },
-    {
-        "usuario": "usuario5",
-        "contrasena": "contrasena5"
-    },
-    {
-        "usuario": "dylan",
-        "contrasena": "prueba"
-    }
+  {
+    "usuario": "usuario1",
+    "contrasena": "contrasena1",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "usuario2",
+    "contrasena": "contrasena2",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "usuario3",
+    "contrasena": "contrasena3",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "usuario4",
+    "contrasena": "contrasena4",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "usuario5",
+    "contrasena": "contrasena5",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "dylan",
+    "contrasena": "prueba",
+    "rol": "administrador"
+  },
+  {
+    "usuario": "jaime",
+    "contrasena": "123",
+    "rol": "cliente"
+  },
+  {
+    "usuario": "lupita",
+    "contrasena": "456",
+    "rol": "cliente"
+  }
 ]

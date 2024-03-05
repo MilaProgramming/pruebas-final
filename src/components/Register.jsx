@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "../hook/useForm";
+import axios from "axios";
 
 export const Register = () => {
-  const [usuarios, setUsuarios] = useState([]);
-
-  const { usuario, contrasena, onInputChange } = useForm({
+  const { usuario, contrasena, rol, onInputChange } = useForm({
     usuario: "",
     contrasena: "",
+    rol: "cliente"
   });
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Agregar el nuevo usuario y contraseña al estado
-    setUsuarios([...usuarios, { usuario, contrasena }]);
-    alert("Usuario registrado correctamente.");
+    try {
+      // Realizar la solicitud POST al servidor Express
+      await axios.post("http://localhost:8000/usuarios", {
+        usuario,
+        contrasena,
+        rol
+      });
+
+      // Actualizar el estado local o realizar cualquier acción adicional si es necesario
+      alert("Usuario registrado correctamente.");
+    } catch (error) {
+      console.error("Error al registrar usuario:", error);
+      alert("Error al registrar usuario. Por favor, inténtalo de nuevo.");
+    }
   };
 
   return (
@@ -25,11 +36,10 @@ export const Register = () => {
             Registrarse
           </div>
           <form onSubmit={handleSubmit}>
-            <label htmlFor="GET-usuario" style={{ marginRight: "80px" }}>
+            <label style={{ marginRight: "80px" }}>
               Usuario
             </label>
             <input
-              id="GET-usuario"
               type="text"
               name="usuario"
               placeholder="Usuario"
@@ -38,11 +48,10 @@ export const Register = () => {
               required
             />
             <br />
-            <label htmlFor="GET-contrasena" style={{ marginRight: "48px" }}>
+            <label style={{ marginRight: "48px" }}>
               Contraseña
             </label>
             <input
-              id="GET-contrasena"
               type="password"
               name="contrasena"
               placeholder="Contraseña"
