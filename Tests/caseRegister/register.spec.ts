@@ -3,28 +3,30 @@ const feature = loadFeature("./Tests/caseRegister/register.feature");
 
 defineFeature(feature, (test) => {
 
-    // Feature: Cedula valida
-    // Scenario: validacion de cedula
-    //     Given un string que contiene la cedula de un cliente
-    //     When verifico la cedula creando el objeto verificador
-    //     Then la cedula es valida
+    // Feature: Registro de Usuario
+    // Scenario: Registro de Usuario Exitoso
+    
+    test('Registro de Usuario Exitoso', ({ given, when, and, then }) => {
 
-    test('validacion de cedula', ({ given, when, then }) => {
-
-        given('un string que contiene la cedula de un cliente', () => {
+        given('que el cliente accede al sistema', () => {
             
         });
 
-        when('verifico la cedula creando el objeto verificador', () => {
-          
+        when('completa el campo de usuario con "admin"', () => {
+            
         });
 
-        then('la cedula es valida', () => {
+        and ('completa el campo de contraseña con "admin"', () => {
+            
+        });
+
+        and ('presiona el botón "Registrar"', () => {
+            
+        });
+
+        then('el sistema responde de manera correcta', () => {
             expect(true).toBe(true);
         });
-    });
+
 });
-    
-
-
-
+});

@@ -16,6 +16,7 @@ const Header = () => {
     window.location.reload();
   };
 
+
   return (
     <>
       <div className="header">
@@ -25,13 +26,13 @@ const Header = () => {
         <div className="menu">
           <ul>
             <li>
-              <a href="/">Inicio</a>
+            <a href="/">Inicio</a>
             </li>
             <li>
-              <a href="/">Sobre nosotros</a>
+              <a href="/sobre-nosotros">Sobre nosotros</a>
             </li>
             <li>
-              <a href="/">Comprar</a>
+              <a href="/catalogo">Comprar</a>
             </li>
             {rol === "administrador" ? (<li>
               <Link to="/lista-clientes">Lista de clientes</Link>
