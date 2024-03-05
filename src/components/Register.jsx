@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "../hook/useForm";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { validacionClave } from "../functions/validacionClave";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ export const Register = () => {
     rol: "cliente",
   });
 
+  const [contrasenaValida, setContrasenaValida] = useState(true); 
+
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/");
@@ -21,6 +24,12 @@ export const Register = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    // Validar la contraseña
+    if (!validacionClave(contrasena)) {
+      setContrasenaValida(false);
+      return;
+    }
 
     try {
       // Realizar la solicitud POST al servidor Express
@@ -70,11 +79,12 @@ export const Register = () => {
               onChange={onInputChange}
               required
             />
+            {!contrasenaValida && <p style={{ color: 'red' }}>La contraseña debe tener al menos 8 caracteres y contener una letra mayúscula y una minúscula.</p>}
             <br />
             <button type="submit">Aceptar</button>
           </form>
           <p>
-            Tienes cuenta? <a href="/login">Inicia sesión</a>
+            ¿Tienes una cuenta? <a href="/login">Inicia sesión</a>
           </p>
         </div>
       </section>
