@@ -24,22 +24,22 @@ class ValidacionUsuario {
     }
   
     validacionUsuario() {
-        const foundUser = this.usuarios.find(user => user.usuario === this.usuario);
-        if (!foundUser) {
+      const foundUser = this.usuarios.find(user => user.usuario === this.usuario);
+      if (!foundUser) {
+        this.setValido(false);
+        return;
+      }
+      else {
+        const validarcontrasena = this.usuarios.find(user => user.usuario === this.usuario && user.contrasena === this.contrasena);
+        if(!validarcontrasena){
           this.setValido(false);
           return;
         }
-        else {
-          const validarcontrasena = this.usuarios.find(user => user.usuario === this.usuario && user.contrasena === this.contrasena);
-          if(!validarcontrasena){
-            this.setValido(false);
-            return;
-          }
-          this.setValido(true);
-          this.contrasena = foundUser.contrasena;
-          return;
-        }
-    }
+        this.setValido(true);
+        this.contrasena = foundUser.contrasena;
+        return;
+      }
+  }
 
     asignarRol(){
       const usuarioEncontrado = this.usuarios.find(user => user.usuario === this.usuario && user.contrasena === this.contrasena);
